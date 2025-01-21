@@ -25,9 +25,9 @@ paginate: 5                             # Número de entradas por página en lis
 paginate_path: "/pagina/:num/"          # Ruta para paginación
 
 # Configuración de navegación
-nav:
-  - title: Inicio
-    url: "/opo/"
+# nav:
+#  - title: Inicio
+#    url: "/opo/"
 #  - title: Acerca de
 #    url: "/opo/about.html"
 #  - title: Contacto
