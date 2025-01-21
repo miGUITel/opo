@@ -1,4 +1,4 @@
-# DHCP
+# DHCP ISC
 
 #### **Ejemplo de configuración con comentarios:**
 

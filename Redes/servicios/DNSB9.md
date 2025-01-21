@@ -1,10 +1,38 @@
-# GUÍA BIND9
+# DNS GUÍA BIND9
 
 ### **Guía para configurar BIND9 como servidor secundario y ejemplos de registros avanzados**
 
 Esta guía incluye la configuración básica y cómo configurar un servidor DNS secundario. Además, se añaden ejemplos de otros tipos de registros (SRV, TXT) y la función del símbolo `@` en los archivos de zona.
 
 ---
+
+### Archivos principales de configuración de BIND9:
+1. **`/etc/bind/named.conf`**
+   - Archivo principal de configuración de BIND9.
+   - Incluye otros archivos de configuración mediante directivas `include`.
+   - Es el punto de entrada para toda la configuración.
+
+2. **`/etc/bind/named.conf.options`**
+   - Archivo donde se configuran las opciones globales.
+   - Aquí se definen aspectos como:
+     - **Forwarders**.
+     - Opciones de caché.
+     - DNSSEC.
+     - Interfaces de escucha.
+   - Es donde normalmente configuras los servidores DNS alternativos.
+
+3. **`/etc/bind/named.conf.local`**
+   - Archivo para configuraciones locales específicas.
+   - Se utiliza para definir **zonas locales** o personalizadas, como zonas directas o inversas.
+
+4. **`/etc/bind/named.conf.default-zones`**
+   - Archivo que contiene las configuraciones de zonas predeterminadas.
+   - Define las zonas para resolver nombres locales como `localhost` y direcciones como `127.0.0.1`.
+
+### Archivos de zonas:
+5. **`/etc/bind/db.local`**
+   - Archivo que contiene la configuración de la zona para `localhost`.
+   - Es un archivo de ejemplo de una zona directa.
 
 ### **1. Archivo `/etc/bind/named.conf.local`**
 Este archivo define las zonas que manejará el servidor. Aquí configuraremos una **zona primaria** y una **zona secundaria**.
