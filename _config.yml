@@ -27,6 +27,10 @@ exclude:
   - README.md                           # Archivos que no se incluirán en el sitio generado
   - node_modules/                       # Carpeta excluida
   - .gitignore                          # Archivos de configuración excluidos
+  - sitemap.xml
+  - robots.txt
+  - feed.xml
+  - assets/main.css
 
 # Configuración de plugins
 plugins:
