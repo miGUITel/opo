@@ -1,3 +1,5 @@
+GUÍA BIND9
+
 ### **Guía para configurar BIND9 como servidor secundario y ejemplos de registros avanzados**
 
 Esta guía incluye la configuración básica y cómo configurar un servidor DNS secundario. Además, se añaden ejemplos de otros tipos de registros (SRV, TXT) y la función del símbolo `@` en los archivos de zona.

@@ -1,3 +1,5 @@
+# CSMA
+
 El protocolo **CSMA (Carrier Sense Multiple Access)** se sitúa en la **capa de enlace de datos** del modelo OSI (**capa 2**). Su objetivo principal es gestionar el acceso al medio físico compartido para evitar colisiones y garantizar un uso eficiente del canal de comunicación.
 
 ---

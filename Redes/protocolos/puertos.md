@@ -1,3 +1,5 @@
+# PUERTOS
+
 | **Servicio**     | **Descripción**                                       | **Puerto** | **Protocolo de Transporte** |
 |------------------|-------------------------------------------------------|------------|-----------------------------|
 | **DHCP**         | Asignación dinámica de direcciones IP.                | 67/68      | UDP                         |

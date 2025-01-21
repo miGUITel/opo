@@ -1,3 +1,5 @@
+# DHCP
+
 #### **Ejemplo de configuración con comentarios:**
 
 ```bash

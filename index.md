@@ -1,5 +1,3 @@
-# Apuntes opo
-
 ---
 layout: default
 title: Página de índice
