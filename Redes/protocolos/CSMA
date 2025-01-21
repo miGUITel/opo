@@ -1,0 +1,29 @@
+El protocolo **CSMA (Carrier Sense Multiple Access)** se sitúa en la **capa de enlace de datos** del modelo OSI (**capa 2**). Su objetivo principal es gestionar el acceso al medio físico compartido para evitar colisiones y garantizar un uso eficiente del canal de comunicación.
+
+---
+
+### **Por qué pertenece a la capa de enlace de datos**
+1. **Gestión del acceso al medio:**  
+   Una de las funciones clave de la capa de enlace de datos es controlar cómo los dispositivos comparten y acceden al medio físico de transmisión (e.g., un cable Ethernet o un canal inalámbrico). CSMA implementa esta gestión mediante el monitoreo del estado del medio antes de transmitir.
+
+2. **Control de colisiones:**  
+   Las variantes de CSMA, como **CSMA/CD** o **CSMA/CA**, están diseñadas para gestionar posibles colisiones, una tarea típica de la subcapa **MAC (Media Access Control)** de la capa de enlace de datos.
+
+---
+
+### **Relación con otras capas**
+- **Capa física (1):**  
+   La capa física proporciona el acceso directo al medio de transmisión (e.g., cables, ondas de radio). CSMA utiliza la información de la capa física para detectar si el medio está ocupado o libre.
+
+- **Capa de red (3):**  
+   Aunque CSMA opera en la capa de enlace de datos, su correcta implementación asegura que los paquetes (generados en la capa de red) puedan ser transmitidos de manera eficiente y sin interferencias.
+
+---
+
+### **Ejemplos en la práctica:**
+- En **Ethernet** (cableada), **CSMA/CD** trabaja en la capa de enlace para evitar colisiones en el medio compartido.  
+- En **Wi-Fi** (inalámbrico), **CSMA/CA** opera en la capa de enlace para evitar colisiones en el canal de transmisión inalámbrico.
+
+---
+
+En resumen, **CSMA** se encuentra en la **capa de enlace de datos**, específicamente en la subcapa **MAC**, ya que se encarga del acceso al medio y del manejo de colisiones en redes compartidas.
