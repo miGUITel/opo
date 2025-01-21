@@ -1,3 +1,6 @@
+#### **Ejemplo de configuración con comentarios:**
+
+```bash
 # Configuración global para todas las subredes
 default-lease-time 600;        # Tiempo de concesión predeterminado en segundos
 max-lease-time 7200;           # Tiempo máximo de concesión en segundos
@@ -24,7 +27,7 @@ host printer1 {
     hardware ethernet 00:11:22:33:44:55; # Dirección MAC del dispositivo
     fixed-address 192.168.1.50;          # Dirección IP asignada estáticamente
 }
-
+```
 
 ### **Guía para configurar ISC DHCP Server en Linux**
 
