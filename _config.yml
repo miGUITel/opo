@@ -22,6 +22,16 @@ kramdown:
 paginate: 5                             # Número de entradas por página en listados
 paginate_path: "/pagina/:num/"          # Ruta para paginación
 
+# Configuración de navegación
+nav:
+  - title: Inicio
+    url: "/opo/"
+#  - title: Acerca de
+#    url: "/opo/about.html"
+#  - title: Contacto
+#    url: "/opo/contact.html"
+
+
 # Archivos y carpetas excluidas del sitio
 exclude:
   - README.md                           # Archivos que no se incluirán en el sitio generado
