@@ -1,4 +1,4 @@
-GUÍA BIND9
+# GUÍA BIND9
 
 ### **Guía para configurar BIND9 como servidor secundario y ejemplos de registros avanzados**
 

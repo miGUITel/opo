@@ -1,4 +1,4 @@
-### **Estándar ZigBee**
+# **Estándar ZigBee**
 
 ZigBee es un estándar de comunicación inalámbrica basado en **IEEE 802.15.4**, diseñado para redes de baja potencia, bajo costo y bajo ancho de banda. Es especialmente útil en aplicaciones de domótica, automatización industrial, sensores, y dispositivos del Internet de las Cosas (IoT).
 
