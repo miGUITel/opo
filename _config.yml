@@ -9,7 +9,8 @@ baseurl: "/opo"                             # Ruta base (por defecto es vacío p
 url: "https://miguitel.github.io"        # URL completa del sitio
 
 # Tema para GitHub Pages
-theme: minima                           # Tema por defecto (puedes cambiarlo por otro tema soportado por GitHub Pages)
+# theme: minima                           # Tema por defecto (puedes cambiarlo por otro tema soportado por GitHub Pages)
+theme: minimal                           # Tema por defecto (puedes cambiarlo por otro tema soportado por GitHub Pages)
 # theme: jekyll-theme-cayman
 
 # Configuración de Markdown y código

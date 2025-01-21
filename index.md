@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Página de índice
+title: Apuntes opo
 ---
 
 # Índice de Páginas
