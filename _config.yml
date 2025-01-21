@@ -1,0 +1,44 @@
+# Información básica del sitio
+title: "Apuntes para la opo de informática"               # Título del sitio
+description: "Un blog sobre tecnología, programación y más."  # Descripción del sitio
+author: "Miguel"                     # Nombre del autor
+email: "tucorreo@ejemplo.com"           # Correo del autor
+
+# URL base del sitio
+baseurl: ""                             # Ruta base (por defecto es vacío para la raíz)
+url: "https://miguitel.github.io/opo/"        # URL completa del sitio
+
+# Tema para GitHub Pages
+# theme: minima                           # Tema por defecto (puedes cambiarlo por otro tema soportado por GitHub Pages)
+theme: jekyll-theme-cayman
+
+# Configuración de Markdown y código
+markdown: kramdown                      # Procesador Markdown
+highlighter: rouge                      # Resaltador de sintaxis para código
+kramdown:
+  input: GFM                            # GitHub Flavored Markdown
+
+# Estructura del sitio y navegación
+paginate: 5                             # Número de entradas por página en listados
+paginate_path: "/pagina/:num/"          # Ruta para paginación
+
+# Archivos y carpetas excluidas del sitio
+exclude:
+  - README.md                           # Archivos que no se incluirán en el sitio generado
+  - node_modules/                       # Carpeta excluida
+  - .gitignore                          # Archivos de configuración excluidos
+
+# Configuración de plugins
+plugins:
+  - jekyll-paginate                     # Soporte para paginación
+  - jekyll-sitemap                      # Genera automáticamente un sitemap.xml
+#  - jekyll-feed                         # Genera un feed RSS
+#  - jekyll-seo-tag                      # Agrega etiquetas SEO automáticamente
+
+# Variables personalizadas (opcional)
+#social_links:
+#  github: "https://github.com/tusitio"
+#  linkedin: "https://linkedin.com/in/tuperfil"
+
+# Configuración de idioma
+locale: "es_ES"                         # Idioma del sitio
