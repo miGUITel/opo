@@ -5,7 +5,7 @@ author: "Miguel"                     # Nombre del autor
 email: "tucorreo@ejemplo.com"           # Correo del autor
 
 # URL base del sitio
-baseurl: "opo"                             # Ruta base (por defecto es vacío para la raíz)
+baseurl: "/opo"                             # Ruta base (por defecto es vacío para la raíz)
 url: "https://miguitel.github.io"        # URL completa del sitio
 
 # Tema para GitHub Pages
