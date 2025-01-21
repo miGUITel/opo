@@ -11,8 +11,8 @@ url: "https://miguitel.github.io"        # URL completa del sitio
 # Tema para GitHub Pages
 # theme: jekyll-theme-minima                           # Tema por defecto (puedes cambiarlo por otro tema soportado por GitHub Pages)
 # theme: jekyll-theme-minimal                           # Tema por defecto (puedes cambiarlo por otro tema soportado por GitHub Pages)
-theme: jekyll-theme-hacker                           # Tema por defecto (puedes cambiarlo por otro tema soportado por GitHub Pages)
-# theme: jekyll-theme-cayman
+# theme: jekyll-theme-hacker                           # Tema por defecto (puedes cambiarlo por otro tema soportado por GitHub Pages)
+theme: jekyll-theme-cayman
 
 # Configuración de Markdown y código
 markdown: kramdown                      # Procesador Markdown
