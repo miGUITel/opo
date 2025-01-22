@@ -66,7 +66,6 @@ zone "example.com" {
 # Configuración de una zona secundaria (servidor ESCLAVO)
 zone "secondary.com" {
     type slave;                 # Este servidor es el secundario para la zona
-    allow-transfer { 192.168.1.11; };  # Esclavo autorizado (para que tenga sentido, NO ES EL MAESTRO DEFINIDO EN ESTE ARCHIVO)
     masters { 192.168.1.10; };  # Dirección IP del servidor maestro 
     file "/var/cache/bind/db.secondary.com";  # Archivo donde se almacenan los datos replicados
 };
