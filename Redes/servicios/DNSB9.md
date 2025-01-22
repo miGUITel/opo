@@ -6,11 +6,11 @@ Esta guía incluye la configuración básica y cómo configurar un servidor DNS 
 
 ---
 
-[`/etc/bind/named.conf.options`](#2-etcbindnamedconfoptions) [más]()
+[oppciones `/etc/bind/named.conf.options`](#2-etcbindnamedconfoptions-arriba) [más](#4-configuración-de-forwarders-etcbindnamedconfoptions-arriba)
 
-[`/etc/bind/named.conf.local`](#3-etcbindnamedconflocal) [más](#1-archivo-etcbindnamedconflocal)
+[declaración de zonas `/etc/bind/named.conf.local`](#3-etcbindnamedconflocal-arriba) [más](#1-archivo-etcbindnamedconflocal-arriba)
 
-[`/etc/bind/db.midominio`](#5-etcbinddbmidominio) [más](#2-archivo-de-zona-directa)
+[configuración de cada zona `/etc/bind/db.midominio`](#5-etcbinddbmidominio-arriba) [más](#2-archivo-de-zona-directa-arriba)
 
 ### Archivos principales de configuración de BIND9:
 ##### 1. **`/etc/bind/named.conf`**
@@ -19,7 +19,7 @@ Esta guía incluye la configuración básica y cómo configurar un servidor DNS 
    - Incluye otros archivos de configuración mediante directivas `include`.
    - Es el punto de entrada para toda la configuración.
 
-##### 2. **`/etc/bind/named.conf.options`**
+##### 2. **`/etc/bind/named.conf.options`** [arriba](#dns-guía-bind9)
    - Archivo donde se configuran las opciones globales.
    - Aquí se definen aspectos como:
      - **Forwarders**.
@@ -28,10 +28,11 @@ Esta guía incluye la configuración básica y cómo configurar un servidor DNS 
      - Interfaces de escucha.
    - Es donde normalmente configuras los servidores DNS alternativos.
 
-##### 3. **`/etc/bind/named.conf.local`**
+##### 3. **`/etc/bind/named.conf.local`** [arriba](#dns-guía-bind9)
    - **Aquí se definen las zonas que habrá en el servidor en los ejercicios.**
    - Archivo para configuraciones locales específicas.
    - Se utiliza para definir **zonas locales** o personalizadas, como zonas *directas* o *inversas*.
+   - Por ejemplo puedo decir que voy a tener una zona *midominio.com* y otra zona *extra.es*
 
 ##### 4. **`/etc/bind/named.conf.default-zones`**
    - **NORMALMENTE NO SE TOCA**
@@ -39,13 +40,13 @@ Esta guía incluye la configuración básica y cómo configurar un servidor DNS 
    - Define las zonas para resolver LOS SERVIDORES RAIZ, nombres locales como `localhost` y direcciones como `127.0.0.1`.
 
 ### Archivos de zonas:
-##### 5. **`/etc/bind/db.midominio`**
+##### 5. **`/etc/bind/db.midominio`** [arriba](#dns-guía-bind9)
    - **SOA, NS, A, AAAA**
    - Un archivo para cada zona
    - Archivo que contiene la configuración de la zona para `localhost`.
    - Es un archivo de ejemplo de una zona directa.
 
-### **1. Archivo `/etc/bind/named.conf.local`**
+### **1. Archivo `/etc/bind/named.conf.local`** [arriba](#dns-guía-bind9)
 Este archivo define las zonas que manejará el servidor (midominio.com). Aquí configuraremos una **zona primaria** y una **zona secundaria**.
 
 **Ubicación:**  
@@ -83,7 +84,7 @@ zone "2.168.192.in-addr.arpa" {
 
 ---
 
-### **2. Archivo de zona directa**
+### **2. Archivo de zona directa** [arriba](#dns-guía-bind9)
 El archivo de zona directa contiene los registros que permiten resolver nombres de dominio en direcciones IP.
 
 **Ubicación:**  
@@ -138,7 +139,7 @@ Esto permite evitar escribir el nombre completo repetidamente, facilitando la le
 
 ---
 
-### **3. Archivo de zona inversa**
+### **3. Archivo de zona inversa** [arriba](#dns-guía-bind9)
 El archivo de zona inversa permite resolver direcciones IP en nombres de dominio.
 
 **Ubicación:**  
@@ -169,7 +170,25 @@ $TTL 86400                     ; Tiempo de vida predeterminado para los registro
 
 ---
 
-### **4. Configuración como servidor secundario**
+### **4. Configuración de forwarders `/etc/bind/named.conf.options`** [arriba](#dns-guía-bind9)
+
+```bash
+options {
+    directory "/var/cache/bind";
+
+    // Forwarders: servidores DNS externos a los que se reenviarán consultas
+    forwarders {
+        8.8.8.8;    // Google Public DNS
+        1.1.1.1;    // Cloudflare DNS
+        9.9.9.9;    // Quad9 DNS
+    };
+
+    // Usar únicamente los forwarders para la resolución de nombres, 
+    forward only; //borrar para que solo se usen en caso de no tener la respuesta
+};
+```
+
+### **4. Configuración como servidor secundario** [arriba](#dns-guía-bind9)
 Para configurar el servidor como secundario:
 1. Añade las zonas secundarias en el archivo `/etc/bind/named.conf.local`.
 2. Asegúrate de que el servidor maestro permita transferencias de zona:
@@ -181,7 +200,7 @@ Para configurar el servidor como secundario:
 
 ---
 
-### **5. Verificación y reinicio**
+### **5. Verificación y reinicio** [arriba](#dns-guía-bind9)
 
 1. Verifica la configuración:
    ```bash
