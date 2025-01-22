@@ -114,7 +114,11 @@ ns2     IN  A    192.168.1.11          ; Dirección IP del servidor DNS secundar
 www     IN  A    192.168.1.20          ; Dirección IP del servidor web
 mail    IN  A    192.168.1.30          ; Dirección IP del servidor de correo
 
-; Registro MX (correo electrónico)
+; Registros A para los nombres del SRV
+ldap    IN A 192.168.1.40      ; Dirección IP del servidor LDAP
+sip     IN A 192.168.1.50      ; Dirección IP del servidor SIP
+
+; Registro MX (correo electrónico) ****MX Y TXT SE APLICAN A TODO EL DOMINIO, POR ESO EMPIEZAN POR @****
 @       IN  MX   10 mail.example.com.  ; Prioridad 10 para el servidor de correo
 
 ; Registro TXT (texto descriptivo o verificaciones)
