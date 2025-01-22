@@ -54,30 +54,36 @@ Este archivo define las zonas que manejará el servidor (midominio.com). Aquí c
 
 #### **Ejemplo de configuración con comentarios:**
 
+(Es un ejemplo. Un servidor no puede ser maestro y esclavo de la misma zona, no tiene sentido. En todo caso, será maestro de una zona y esclavo de otra.)
 ```bash
-# Configuración de una zona primaria (servidor maestro)
+# Configuración de una zona primaria (servidor MAESTRO)
 zone "example.com" {
     type master;                # Este servidor es el maestro para la zona
     file "/etc/bind/db.example.com";  # Archivo de registros de la zona directa
+    allow-transfer { 192.168.1.11; };  # Esclavo autorizado (para que tenga sentido, NO ES EL ESCLAVO DEFINIDO EN ESTE ARCHIVO)
 };
 
-# Configuración de una zona secundaria (servidor esclavo)
+# Configuración de una zona secundaria (servidor ESCLAVO)
 zone "secondary.com" {
     type slave;                 # Este servidor es el secundario para la zona
-    masters { 192.168.1.10; };  # Dirección IP del servidor maestro
+    allow-transfer { 192.168.1.11; };  # Esclavo autorizado (para que tenga sentido, NO ES EL MAESTRO DEFINIDO EN ESTE ARCHIVO)
+    masters { 192.168.1.10; };  # Dirección IP del servidor maestro 
     file "/var/cache/bind/db.secondary.com";  # Archivo donde se almacenan los datos replicados
 };
 
-# Zona inversa primaria para resolución IP -> nombre
+# Zona inversa primaria MAESTRA para resolución IP -> nombre
 zone "1.168.192.in-addr.arpa" {
     type master;
     file "/etc/bind/db.192.168.1";
+    allow-transfer { 192.168.1.11; };  # Esclavo autorizado (para que tenga sentido, NO ES EL ESCLAVO DEFINIDO EN ESTE ARCHIVO)
+
 };
 
-# Zona inversa secundaria
+# Zona inversa secundaria ESCKAVA
 zone "2.168.192.in-addr.arpa" {
     type slave;
-    masters { 192.168.1.10; };  # Dirección IP del servidor maestro
+    allow-transfer { 192.168.1.11; };  # Esclavo autorizado (para que tenga sentido, NO ES EL MAESTRO DEFINIDO EN ESTE ARCHIVO)
+    masters { 192.168.1.10; };  # Dirección IP del servidor maestro 
     file "/var/cache/bind/db.192.168.2";  # Archivo donde se replican los datos
 };
 ```
