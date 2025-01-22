@@ -81,7 +81,6 @@ zone "1.168.192.in-addr.arpa" {
 # Zona inversa secundaria ESCKAVA
 zone "2.168.192.in-addr.arpa" {
     type slave;
-    allow-transfer { 192.168.1.11; };  # Esclavo autorizado (para que tenga sentido, NO ES EL MAESTRO DEFINIDO EN ESTE ARCHIVO)
     masters { 192.168.1.10; };  # Dirección IP del servidor maestro 
     file "/var/cache/bind/db.192.168.2";  # Archivo donde se replican los datos
 };
