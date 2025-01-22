@@ -6,13 +6,20 @@ Esta guía incluye la configuración básica y cómo configurar un servidor DNS 
 
 ---
 
+[`/etc/bind/named.conf.options`](#2-etcbindnamedconfoptions) [más]()
+
+[`/etc/bind/named.conf.local`](#3-etcbindnamedconflocal) [más](#1-archivo-etcbindnamedconflocal)
+
+[`/etc/bind/db.midominio`](#5-etcbinddbmidominio) [más](#2-archivo-de-zona-directa)
+
 ### Archivos principales de configuración de BIND9:
-1. **`/etc/bind/named.conf`**
+##### 1. **`/etc/bind/named.conf`**
+   - **AGRUPA EL RESTO DE ARCHIVOS**
    - Archivo principal de configuración de BIND9.
    - Incluye otros archivos de configuración mediante directivas `include`.
    - Es el punto de entrada para toda la configuración.
 
-2. **`/etc/bind/named.conf.options`**
+##### 2. **`/etc/bind/named.conf.options`**
    - Archivo donde se configuran las opciones globales.
    - Aquí se definen aspectos como:
      - **Forwarders**.
@@ -21,21 +28,25 @@ Esta guía incluye la configuración básica y cómo configurar un servidor DNS 
      - Interfaces de escucha.
    - Es donde normalmente configuras los servidores DNS alternativos.
 
-3. **`/etc/bind/named.conf.local`**
+##### 3. **`/etc/bind/named.conf.local`**
+   - **Aquí se definen las zonas que habrá en el servidor en los ejercicios.**
    - Archivo para configuraciones locales específicas.
-   - Se utiliza para definir **zonas locales** o personalizadas, como zonas directas o inversas.
+   - Se utiliza para definir **zonas locales** o personalizadas, como zonas *directas* o *inversas*.
 
-4. **`/etc/bind/named.conf.default-zones`**
+##### 4. **`/etc/bind/named.conf.default-zones`**
+   - **NORMALMENTE NO SE TOCA**
    - Archivo que contiene las configuraciones de zonas predeterminadas.
-   - Define las zonas para resolver nombres locales como `localhost` y direcciones como `127.0.0.1`.
+   - Define las zonas para resolver LOS SERVIDORES RAIZ, nombres locales como `localhost` y direcciones como `127.0.0.1`.
 
 ### Archivos de zonas:
-5. **`/etc/bind/db.local`**
+##### 5. **`/etc/bind/db.midominio`**
+   - **SOA, NS, A, AAAA**
+   - Un archivo para cada zona
    - Archivo que contiene la configuración de la zona para `localhost`.
    - Es un archivo de ejemplo de una zona directa.
 
 ### **1. Archivo `/etc/bind/named.conf.local`**
-Este archivo define las zonas que manejará el servidor. Aquí configuraremos una **zona primaria** y una **zona secundaria**.
+Este archivo define las zonas que manejará el servidor (midominio.com). Aquí configuraremos una **zona primaria** y una **zona secundaria**.
 
 **Ubicación:**  
 `/etc/bind/named.conf.local`
