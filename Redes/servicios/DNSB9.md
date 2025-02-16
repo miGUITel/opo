@@ -1,5 +1,5 @@
 ---
-type: Checklist
+type: Journal
 ---
 
 # DNS GUÍA BIND9
